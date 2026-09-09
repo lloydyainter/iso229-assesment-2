@@ -70,10 +70,10 @@ Development should be committed progressively, for example:
 GitHub Pages should be enabled after the repository is pushed to GitHub.
 
 Repository URL:
-PASTE YOUR GITHUB REPOSITORY URL HERE
+https://github.com/lloydyainter/iso229-assessment-2
 
 Published website URL:
-PASTE YOUR GITHUB PAGES URL HERE
+https://lloydyainter.github.io/iso229-assessment-2
 
 ## AI Use Declaration
 Example declaration – edit this to match the actual help you received:
