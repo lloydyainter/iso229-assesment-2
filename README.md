@@ -82,3 +82,8 @@ Example declaration – edit this to match the actual help you received:
 
 ## Academic note
 This is a student academic project and is not an official Brian Bell Home Centres website.
+## Student Information
+Name: Lloyd Yainter
+Course: Batchelor of Business in Information Technology 
+Unit: ISO229-Web Design
+Assessment: Assessment 2 - HTML5 Website
