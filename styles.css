@@ -1,0 +1,97 @@
+/* Basic CSS for ISO229 Assessment 2.
+   Advanced responsive layouts are intentionally avoided because they are assessed in A3. */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background: #f4f4f4;
+    color: #222;
+}
+
+header, main, footer {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background: #ffffff;
+    border-bottom: 3px solid #333;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    font-weight: bold;
+}
+
+main {
+    background: #ffffff;
+}
+
+section, article {
+    margin-bottom: 25px;
+}
+
+figure {
+    margin: 20px 0;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #555;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    font-weight: bold;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+input, select, textarea, button {
+    font: inherit;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+input, select, textarea {
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    margin-top: 20px;
+}

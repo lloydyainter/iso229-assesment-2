@@ -1,0 +1,41 @@
+ISO229 ASSESSMENT 2 – VALIDATION EVIDENCE
+
+Student name: ______________________________
+Student ID: ________________________________
+
+Website:
+Brian Bell Home Centres – Customer Information Website
+
+VALIDATION CHECK 1
+File: index.html
+Validator used: _____________________________
+Date checked: _______________________________
+Result: ____________________________________
+Screenshot filename: ________________________
+
+VALIDATION CHECK 2
+File: services.html
+Validator used: _____________________________
+Date checked: _______________________________
+Result: ____________________________________
+Screenshot filename: ________________________
+
+VALIDATION CHECK 3
+File: contact.html
+Validator used: _____________________________
+Date checked: _______________________________
+Result: ____________________________________
+Screenshot filename: ________________________
+
+FINAL CHECKLIST
+[ ] All three pages open correctly.
+[ ] All navigation links work.
+[ ] Images have alt text.
+[ ] Form labels are connected to controls.
+[ ] Required fields work.
+[ ] HTML5 validation completed.
+[ ] GitHub repository is public/accessible as required.
+[ ] GitHub Pages website is published.
+[ ] README.md completed.
+[ ] Git history contains several meaningful commits.
+[ ] AI Use Declaration accurately describes actual AI assistance.
