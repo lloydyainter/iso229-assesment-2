@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Customer enquiry form for a student-developed Brian Bell Home Centres website.">
+    <meta name="description" content="Responsive customer enquiry form with HTML5 and JavaScript validation for a student-developed website.">
     <title>Brian Bell HomeCentres | Contact / Enquiry</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 <header>
-    <h1>Contact / Product Enquiry</h1>
-    <p>Send a general enquiry about products or customer information.</p>
+    <h1 class="site-title">Contact / Product Enquiry</h1>
+    <p class="tagline">Complete the form to check your enquiry before sending it.</p>
     <nav aria-label="Main navigation">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -21,85 +22,96 @@
 </header>
 
 <main>
-    <section>
-        <h2>Customer enquiry form</h2>
-        <p>Fields marked with <strong>*</strong> are required.</p>
+    <section aria-labelledby="form-heading">
+        <h2 id="form-heading">Customer enquiry form</h2>
+        <p>Fields marked with <strong>*</strong> are required. HTML5 constraints and JavaScript interaction are used to check the form.</p>
 
-        <form action="#" method="post">
+        <form action="#" method="post" id="enquiry-form">
             <fieldset>
                 <legend>Personal details</legend>
-
-                <p>
-                    <label for="full-name">Full name *</label><br>
-                    <input type="text" id="full-name" name="full_name" required minlength="2" maxlength="80" autocomplete="name">
-                </p>
-
-                <p>
-                    <label for="email">Email address *</label><br>
-                    <input type="email" id="email" name="email" required autocomplete="email">
-                </p>
-
-                <p>
-                    <label for="phone">Telephone number</label><br>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9+() -]{7,20}" autocomplete="tel">
-                </p>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="full-name">Full name *</label>
+                        <input type="text" id="full-name" name="full_name" required minlength="2" maxlength="80" autocomplete="name">
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email address *</label>
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+                    <div class="form-field">
+                        <label for="phone">Telephone number</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9+() -]{7,20}" autocomplete="tel" aria-describedby="phone-help">
+                        <small id="phone-help">Use 7–20 characters: numbers, spaces, +, -, or brackets.</small>
+                    </div>
+                </div>
             </fieldset>
 
             <fieldset>
                 <legend>Enquiry details</legend>
-
-                <p>
-                    <label for="category">Product category *</label><br>
-                    <select id="category" name="category" required>
-                        <option value="">-- Select a category --</option>
-                        <option value="appliances">Home Appliances</option>
-                        <option value="furniture">Furniture and Home</option>
-                        <option value="technology">Technology</option>
-                        <option value="entertainment">Entertainment</option>
-                        <option value="other">Other</option>
-                    </select>
-                </p>
-
-                <p>Preferred contact method *</p>
-                <p>
-                    <input type="radio" id="contact-email" name="contact_method" value="email" required>
-                    <label for="contact-email">Email</label>
-                    <input type="radio" id="contact-phone" name="contact_method" value="phone">
-                    <label for="contact-phone">Telephone</label>
-                </p>
-
-                <p>
-                    <input type="checkbox" id="product-availability" name="product_availability" value="yes">
-                    <label for="product-availability">I would like information about product availability.</label>
-                </p>
-
-                <p>
-                    <label for="message">Your enquiry *</label><br>
-                    <textarea id="message" name="message" rows="7" cols="50" required minlength="10" maxlength="1000" placeholder="Enter your question here..."></textarea>
-                </p>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="category">Product category *</label>
+                        <select id="category" name="category" required>
+                            <option value="">-- Select a category --</option>
+                            <option value="home appliances">Home Appliances</option>
+                            <option value="furniture and home">Furniture and Home</option>
+                            <option value="technology">Technology</option>
+                            <option value="entertainment">Entertainment</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required minlength="3" maxlength="120">
+                    </div>
+                    <div class="form-field full">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required minlength="10" maxlength="1000"></textarea>
+                    </div>
+                </div>
             </fieldset>
 
-            <p>
-                <button type="submit">Submit Enquiry</button>
-                <button type="reset">Clear Form</button>
-            </p>
+            <fieldset>
+                <legend>Preferred response</legend>
+                <div class="inline-options">
+                    <label><input type="radio" name="response" value="email" required> Email</label>
+                    <label><input type="radio" name="response" value="phone"> Telephone</label>
+                </div>
+            </fieldset>
+
+            <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+            <div class="button-row">
+                <button type="submit">Check &amp; Submit Enquiry</button>
+                <button type="reset" class="secondary">Clear Form</button>
+            </div>
         </form>
     </section>
 
-    <section>
-        <h2>Contact information</h2>
+    <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3><button type="button" class="faq-button" data-faq-button aria-expanded="false" aria-controls="faq-1">Does this form send a real enquiry?</button></h3>
+                <div id="faq-1" class="faq-panel" hidden><p>No. This is an academic demonstration. The JavaScript validates the form and displays a confirmation message but does not send data to a real business system.</p></div>
+            </div>
+            <div class="faq-item">
+                <h3><button type="button" class="faq-button" data-faq-button aria-expanded="false" aria-controls="faq-2">Can I use the site on a phone?</button></h3>
+                <div id="faq-2" class="faq-panel" hidden><p>Yes. The layout uses responsive CSS, Flexbox, Grid and media queries for mobile, tablet and desktop screens.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section aria-labelledby="contact-heading" class="notice">
+        <h2 id="contact-heading">Academic project contact note</h2>
         <address>
-            Academic project contact page<br>
-            Papua New Guinea<br>
             Email: <a href="mailto:student@example.com">student@example.com</a>
         </address>
-        <p><strong>Note:</strong> The contact details above are placeholders for this academic project. Replace them with approved project details if your lecturer requires real business information.</p>
+        <p>This contact detail is a placeholder for the academic project and is not an official Brian Bell HomeCentres contact.</p>
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2026 Student-developed website for ISO229 Web Design Assessment 2.</p>
-    <p>This is an academic project and is not an official Brian Bell Home Centres website.</p>
+    <p>&copy; 2026 Student-developed website for ISO229 Web Design Assessment 4.</p>
+    <p>This is an academic project and is not an official Brian Bell HomeCentres website.</p>
 </footer>
 </body>
 </html>

@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A student-developed HTML5 customer information website for Brian Bell Home Centres.">
-    <title>Brian Bell Home Centres | Home</title>
+    <meta name="description" content="A student-developed responsive customer information website for Brian Bell HomeCentres.">
+    <title>Brian Bell HomeCentres | Home</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 <header>
-    <h1>Brian Bell HomeCentres</h1>
-    <p>Your home, appliance and technology information centre.</p>
+    <div class="brand-row">
+        <div>
+            <h1 class="site-title">Brian Bell HomeCentres</h1>
+            <p class="tagline">Your home, appliance and technology information centre.</p>
+        </div>
+    </div>
     <nav aria-label="Main navigation">
         <ul>
             <li><a href="index.html" aria-current="page">Home</a></li>
@@ -23,52 +26,75 @@
 </header>
 
 <main>
-    <section>
-        <h2>Welcome</h2>
-        <p>This student-developed website provides customers with simple information about home products, appliances, technology products and customer enquiries.</p>
-        <p>The website is designed for customers who want to explore product categories and send an enquiry before visiting a store.</p>
+    <section class="hero" aria-labelledby="welcome-heading">
+        <div>
+            <h2 id="welcome-heading">Welcome</h2>
+            <p>This student-developed website provides customers with simple information about home products, appliances, technology products and customer enquiries.</p>
+            <p>The responsive layout is designed for mobile phones, tablets and desktop computers.</p>
+            <div class="button-row">
+                <a class="button" href="services.html">Explore Products &amp; Services</a>
+                <a class="button secondary" href="contact.html">Make an Enquiry</a>
+            </div>
+        </div>
         <figure>
-            <img src="https://placehold.co/900x350?text=Home+and+Appliance+Products" alt="Illustration representing home and appliance products">
-            <figcaption>Home, appliance and technology products for everyday needs.</figcaption>
+            <img class="hero-graphic" src="images/hero.svg" alt="Illustration representing home and appliance products">
         </figure>
     </section>
 
-    <section>
-        <h2>What you can do</h2>
-        <article>
-            <h3>Explore categories</h3>
-            <p>View common product categories and basic customer information.</p>
-        </article>
-        <article>
-            <h3>Make an enquiry</h3>
-            <p>Use the enquiry form to provide your contact details and request information.</p>
-        </article>
-        <article>
-            <h3>Plan your visit</h3>
-            <p>Prepare your product questions before contacting or visiting a store.</p>
-        </article>
+    <section aria-labelledby="what-heading">
+        <h2 id="what-heading">What you can do</h2>
+        <div class="card-grid">
+            <article class="card">
+                <h3>Explore categories</h3>
+                <p>View common product categories and basic customer information.</p>
+            </article>
+            <article class="card">
+                <h3>Make an enquiry</h3>
+                <p>Use the enquiry form to provide your contact details and request information.</p>
+            </article>
+            <article class="card">
+                <h3>Plan your visit</h3>
+                <p>Prepare your product questions before contacting or visiting a store.</p>
+            </article>
+        </div>
     </section>
 
-    <section>
-        <h2>Popular categories</h2>
-        <ul>
-            <li>Home appliances</li>
-            <li>Furniture and home products</li>
-            <li>Computers and technology</li>
-            <li>Entertainment products</li>
-            <li>Customer support and enquiries</li>
-        </ul>
+    <section aria-labelledby="categories-heading">
+        <h2 id="categories-heading">Popular categories</h2>
+        <div class="list-panel">
+            <ul>
+                <li>Home appliances</li>
+                <li>Furniture and home products</li>
+                <li>Computers and technology</li>
+                <li>Entertainment products</li>
+                <li>Customer support and enquiries</li>
+            </ul>
+        </div>
     </section>
 
-    <section>
-        <h2>Quick links</h2>
+    <section aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Quick customer questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3><button type="button" class="faq-button" data-faq-button aria-expanded="false" aria-controls="home-faq-1">What categories are covered?</button></h3>
+                <div id="home-faq-1" class="faq-panel" hidden><p>The site covers home appliances, furniture and home products, technology and entertainment categories.</p></div>
+            </div>
+            <div class="faq-item">
+                <h3><button type="button" class="faq-button" data-faq-button aria-expanded="false" aria-controls="home-faq-2">How can I make an enquiry?</button></h3>
+                <div id="home-faq-2" class="faq-panel" hidden><p>Open Contact / Enquiry, complete the required fields and use the form validation before submitting.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section aria-labelledby="quick-heading">
+        <h2 id="quick-heading">Quick links</h2>
         <p>Learn more on the <a href="services.html">Products &amp; Services</a> page or send an enquiry through the <a href="contact.html">Contact / Enquiry</a> page.</p>
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2026 Student-developed website for ISO229 Web Design Assessment 2.</p>
-    <p>This is an academic project and is not an official Brian Bell Home Centres website.</p>
+    <p>&copy; 2026 Student-developed website for ISO229 Web Design Assessment 4.</p>
+    <p>This is an academic project and is not an official Brian Bell HomeCentres website.</p>
 </footer>
 </body>
 </html>

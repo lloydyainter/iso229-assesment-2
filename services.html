@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Product categories and customer service information for a student-developed Brian Bell Home Centres website.">
+    <meta name="description" content="Responsive product categories with search and filtering for a student-developed Brian Bell HomeCentres website.">
     <title>Brian Bell HomeCentres | Products &amp; Services</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 <header>
-    <h1>Products &amp; Services</h1>
-    <p>Information to help customers plan their product enquiries.</p>
+    <h1 class="site-title">Products &amp; Services</h1>
+    <p class="tagline">Search product categories and prepare your customer enquiry.</p>
     <nav aria-label="Main navigation">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -21,87 +22,93 @@
 </header>
 
 <main>
-    <section>
-        <h2>Product categories</h2>
-        <p>The following categories are included for this academic website project.</p>
-
-        <article>
-            <h3>Home Appliances</h3>
-            <p>Examples include refrigerators, washing machines, ovens, microwaves, air conditioners and other household appliances.</p>
-        </article>
-
-        <article>
-            <h3>Furniture and Home</h3>
-            <p>Home furniture and related products can help customers improve comfort, storage and everyday living spaces.</p>
-        </article>
-
-        <article>
-            <h3>Technology</h3>
-            <p>Technology categories may include computers, accessories and other electronic products for home or study.</p>
-        </article>
-
-        <article>
-            <h3>Entertainment</h3>
-            <p>Entertainment products may include televisions, audio equipment and related accessories.</p>
-        </article>
+    <section aria-labelledby="search-heading" class="tool-panel">
+        <h2 id="search-heading">Find a product category</h2>
+        <p>Use the search box or category filter to quickly narrow the information shown below.</p>
+        <div class="filter-grid">
+            <div class="form-field">
+                <label for="product-search">Search categories</label>
+                <input type="search" id="product-search" placeholder="e.g. laptop, home, television" autocomplete="off">
+            </div>
+            <div class="form-field">
+                <label for="category-filter">Filter by category</label>
+                <select id="category-filter">
+                    <option value="">All categories</option>
+                    <option value="appliances">Home Appliances</option>
+                    <option value="furniture">Furniture &amp; Home</option>
+                    <option value="technology">Technology</option>
+                    <option value="entertainment">Entertainment</option>
+                </select>
+            </div>
+        </div>
+        <div class="button-row">
+            <button type="button" id="clear-filters" class="secondary">Clear filters</button>
+        </div>
+        <p id="result-count" class="status-text" aria-live="polite">4 product categories shown</p>
     </section>
 
-    <section>
-        <h2>Customer enquiry process</h2>
-        <ol>
-            <li>Identify the product or category you are interested in.</li>
-            <li>Prepare your preferred product details or questions.</li>
-            <li>Complete the online enquiry form.</li>
-            <li>Provide accurate contact information.</li>
-            <li>Wait for the appropriate customer response.</li>
-        </ol>
+    <section aria-labelledby="products-heading">
+        <h2 id="products-heading">Product categories</h2>
+        <div class="card-grid" id="product-list">
+            <article class="card" data-product-card data-category="appliances">
+                <h3>Home Appliances</h3>
+                <p>Examples include refrigerators, washing machines, ovens, microwaves and air conditioners.</p>
+            </article>
+            <article class="card" data-product-card data-category="furniture">
+                <h3>Furniture and Home</h3>
+                <p>Furniture and related products can support comfort, storage and everyday living spaces.</p>
+            </article>
+            <article class="card" data-product-card data-category="technology">
+                <h3>Technology</h3>
+                <p>Technology categories may include computers, accessories and electronic products for home or study.</p>
+            </article>
+            <article class="card" data-product-card data-category="entertainment">
+                <h3>Entertainment</h3>
+                <p>Entertainment products may include televisions, audio equipment and related accessories.</p>
+            </article>
+        </div>
     </section>
 
-    <section>
-        <h2>Example product information table</h2>
-        <table>
-            <caption>Example categories for customer enquiries</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Category</th>
-                    <th scope="col">Example products</th>
-                    <th scope="col">Typical customer need</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Appliances</td>
-                    <td>Refrigerator, washing machine</td>
-                    <td>Home use</td>
-                </tr>
-                <tr>
-                    <td>Technology</td>
-                    <td>Laptop, accessories</td>
-                    <td>Study or work</td>
-                </tr>
-                <tr>
-                    <td>Entertainment</td>
-                    <td>Television, audio equipment</td>
-                    <td>Home entertainment</td>
-                </tr>
-                <tr>
-                    <td>Furniture</td>
-                    <td>Tables, storage products</td>
-                    <td>Home improvement</td>
-                </tr>
-            </tbody>
-        </table>
+    <section aria-labelledby="process-heading">
+        <h2 id="process-heading">Customer enquiry process</h2>
+        <div class="list-panel">
+            <ol>
+                <li>Identify the product or category you are interested in.</li>
+                <li>Prepare your preferred product details or questions.</li>
+                <li>Complete the online enquiry form.</li>
+                <li>Provide accurate contact information.</li>
+                <li>Review the validation message before submitting.</li>
+            </ol>
+        </div>
     </section>
 
-    <section>
-        <h2>Need more information?</h2>
+    <section aria-labelledby="table-heading">
+        <h2 id="table-heading">Example product information table</h2>
+        <div class="table-wrap">
+            <table>
+                <caption>Example categories for customer enquiries</caption>
+                <thead>
+                    <tr><th scope="col">Category</th><th scope="col">Example products</th><th scope="col">Typical customer need</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Appliances</td><td>Refrigerator, washing machine</td><td>Home use</td></tr>
+                    <tr><td>Technology</td><td>Laptop, accessories</td><td>Study or work</td></tr>
+                    <tr><td>Entertainment</td><td>Television, audio equipment</td><td>Home entertainment</td></tr>
+                    <tr><td>Furniture</td><td>Tables, storage products</td><td>Home improvement</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section aria-labelledby="more-heading">
+        <h2 id="more-heading">Need more information?</h2>
         <p>Go to the <a href="contact.html">Contact / Enquiry</a> page to submit your questions.</p>
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2026 Student-developed website for ISO229 Web Design Assessment 2.</p>
-    <p>This is an academic project and is not an official Brian Bell Home Centres website.</p>
+    <p>&copy; 2026 Student-developed website for ISO229 Web Design Assessment 4.</p>
+    <p>This is an academic project and is not an official Brian Bell HomeCentres website.</p>
 </footer>
 </body>
 </html>
